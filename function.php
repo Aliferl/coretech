@@ -39,4 +39,11 @@ function tambah($data)
     return mysqli_affected_rows($config);
 }
 
+function cari($search){
+    $query = "SELECT * FROM laptop WHERE brand LIKE '%$search%'
+                OR tipe  LIKE '$search' OR des  LIKE '$search' ";
+    return query($query);
+}
+
+
 ?>
