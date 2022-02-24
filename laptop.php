@@ -5,6 +5,11 @@ $laptop = query("SELECT*FROM laptop");
 // while ($result = mysqli_fetch_assoc($query)) {
 //    // var_dump($result);
 // }
+
+if(isset($_POST["cari"])){
+   $laptop = cari($_POST["search"]);
+
+}
 ?>
 
 
@@ -107,14 +112,16 @@ $laptop = query("SELECT*FROM laptop");
                </div>
                <div class="main">
                   <!-- Another variation with a button -->
+                  <form action="" method="post">
                   <div class="input-group">
-                     <input type="text" class="form-control" placeholder="Temukan Gear Terbaikmu">
+                     <input type="text" class="form-control" name="search" placeholder="Temukan Gear Terbaikmu">
                      <div class="input-group-append">
-                        <button class="btn btn-secondary" type="button" style="background-color: #543884; border-color:#543884 ">
+                        <button class="btn btn-secondary" type="submit" name="cari" style="background-color: #543884; border-color:#543884 ">
                            <i class="fa fa-search"></i>
                         </button>
                      </div>
                   </div>
+                  </form>
                </div>
                <div class="header_box">
                   <div class="lang_box ">
@@ -327,7 +334,6 @@ $laptop = query("SELECT*FROM laptop");
 
    <div class="container">
       <div class="row">
-
          <!-- ITEM TAG PHP -->
          <?php foreach ($laptop as $row) : ?>
             <div class="col-md-3 col-sm-6">
@@ -353,6 +359,7 @@ $laptop = query("SELECT*FROM laptop");
 
       </div> <!-- row.// -->
    </div>
+   <br>
 
 
    <!-- footer section start -->
