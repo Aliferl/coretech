@@ -1,33 +1,31 @@
 <?php
 require 'function.php';
 
+
+
 if (isset($_POST["submit"])) {
 
-    $brand = $_POST["brand"];
-    $tipe = $_POST["tipe"];
-    $price = $_POST["price"];
-    $des = $_POST["des"];
-    $no = $_POST["no"];
-    $img = $_POST["img"];
-
-    $query = "INSERT INTO laptop
-                VALUES(
-                    '', '$brand', '$tipe', '$price', '$des', '$no', '$img'
-                )
-                ";
-
-    mysqli_query($config, $query);
+    if (tambah($_POST) > 0) {
+        echo "
+        
+        <script>
+        
+        alert('data berhasil ditambahkan');
+        document.location.href='laptop.php'
+        
+        </script>
+        ";
+    } else {
+        echo "
+        <script>
+        
+        alert('data gagal ditambahkan');
+        document.location.href='laptop.php'
+        
+        </script>
+        ";
+    }
 }
-
-
-if (mysqli_affected_rows($config) > 0) {
-    echo "berhasil";
-} else {
-    echo "gagal";
-    echo "<br>";
-    echo mysqli_error($config);
-}
-
 
 
 ?>
