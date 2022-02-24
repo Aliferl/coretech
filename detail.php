@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php 
+require 'function.php';
+$id = $_GET["id"];
+$produk = query("SELECT * FROM laptop WHERE id = $id")["0"];
+
+?>
 <html lang="en">
    <head>
       <!-- basic -->
@@ -126,13 +132,13 @@
                                 
                             </div>
                             <div class="details col-md-6">
-                                <h1 class="product-title">LENOVO</h1>
-                                <h3 class="product-title">LENOVO YOGA</h3>
+                                <h1 class="product-title"><?= $produk["brand"]; ?></h1>
+                                <h3 class="product-title"><?= $produk["tipe"]; ?></h3>
                                 
-                                <h4 class="price">HARGA: <span>Rp. 8.999.999</span></h4>
-                                <p class="product-description">Spesifikasi</p>
+                                <h4 class="price"> <span>Rp. <?= $produk["price"]; ?></span></h4>
+                                <p class="product-description">Spesifikasi</p> <?= $produk["des"]; ?>
                                 
-                                
+                                <br><br>
                                 <h5 class="colors">colors:
                                     <button class="btn btn-primary"></button>
                                     <button class="btn btn-success"></button>
