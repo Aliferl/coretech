@@ -348,7 +348,7 @@ if(isset($_POST["cari"])){
                      <a href="#" class="title"><?php echo $row["tipe"]; ?></a>
                      <div class="mt-2">
                         <var class="price">Rp. <?php echo $row["price"]; ?></var> <!-- price-wrap.// -->
-                        <a href="#" class="btn btn-sm btn-outline-primary float-right"> Beli <i class="fa fa-shopping-cart"></i></a>
+                        <a href="detail.php?id=<?= $row['id']?>" class="btn btn-sm btn-outline-primary float-right"> Beli <i class="fa fa-shopping-cart"></i></a>
                      </div> <!-- action-wrap.end -->
                   </figcaption>
                </figure> <!-- card // -->
